@@ -1,11 +1,7 @@
 package com.web.study.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,28 +14,32 @@ import com.web.study.dto.request.BasicTestDto2;
 @RestController
 public class BasicRestContoller2 {
 	
-	@GetMapping("/fuck")
-	public ResponseEntity<? extends ResponseDto> fuck(BasicTestDto2 basicTestDto2) {
-		String chatInfo = basicTestDto2.getUserId() + "(" + basicTestDto2.getMessage() + ")";
-		return ResponseEntity.ok().body(DataResponseDto.of(chatInfo));
+	@GetMapping("/lol/get1")	//param 1개
+	public ResponseEntity<? extends ResponseDto> lolGet(String lolInfo) {
+		return ResponseEntity.ok().body(DataResponseDto.of(lolInfo));
 	}
 	
-	@GetMapping("/fuck2/{userId}")
-	public ResponseEntity<? extends ResponseDto> fuck2(@PathVariable("userId")int userId) {
-		Map<Integer, String> chatInfoMap = new HashMap<>();
-		
-		chatInfoMap.put(1, "ㅎㅇ");
-		chatInfoMap.put(2, "ㅎㅇ2");
-		chatInfoMap.put(3, "ㅎㅇ3");
-		chatInfoMap.put(4, "ㅎㅇ4");
-		chatInfoMap.put(5, "ㅎㅇ5");
-		
-		return ResponseEntity.ok().body(DataResponseDto.of(chatInfoMap.get(userId)));
+	@GetMapping("/lol/get2") //dto 만들어서
+	public ResponseEntity<? extends ResponseDto> lolGet2(BasicTestDto2 basicTestDto2) {
+		String lolInfo = basicTestDto2.getNickName() + "(" + basicTestDto2.getLevel() + ")" + " : " + basicTestDto2.getTier();
+		return ResponseEntity.ok().body(DataResponseDto.of(lolInfo));
 	}
 	
-	@PostMapping("/create2")
-	public ResponseEntity<? extends ResponseDto> create2(@RequestBody BasicTestDto2 basicTestDto2) {
+	@GetMapping("/lol/get3") //dto 없이
+	public ResponseEntity<? extends ResponseDto> lolGet3(int level, String tier, String nickName) {
+		String lolInfo = nickName + "(" + level + ")" + " : " + tier;
+		return ResponseEntity.ok().body(DataResponseDto.of(lolInfo));
+	}
+	
+	// ===============================================================================================
+	
+	@PostMapping("/lol/post1") //formData로
+	public ResponseEntity<? extends ResponseDto> lolPostForm(BasicTestDto2 basicTestDto2) {
 		return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto2));
 	}
-
+	
+	@PostMapping("/lol/post2") //Json으로
+	public ResponseEntity<? extends ResponseDto> lolPostJson(@RequestBody BasicTestDto2 basicTestDto2) {
+		return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto2));
+	}
 }

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class BasicTestDto2 {
-	private int userId;
-	private String message;
-
+	private int level;
+	private String nickName;
+	private String tier;
 }
