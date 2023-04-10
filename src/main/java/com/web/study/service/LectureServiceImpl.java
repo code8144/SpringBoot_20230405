@@ -1,9 +1,13 @@
 package com.web.study.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.web.study.domain.entity.Lecture;
 import com.web.study.dto.request.lecture.LectureReqDto;
+import com.web.study.dto.response.LectureRespDto;
 import com.web.study.repository.LectureRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -22,6 +26,21 @@ public class LectureServiceImpl implements LectureService {
 		System.out.println("변환: " + lecture);
 		lectureRepository.regist(lecture);
 		
+	}
+
+	@Override
+	public List<LectureRespDto> getLectureAll() {
+		List<LectureRespDto> dtos = new ArrayList<>();
+		lectureRepository.getLectureAll().forEach(entity -> {
+			dtos.add(entity.toDto());
+		});
+		return dtos;
+	}
+
+	@Override
+	public Lecture findLectureById(int id) {
+		
+		return lectureRepository.findLectureById(id);
 	}
 	
 

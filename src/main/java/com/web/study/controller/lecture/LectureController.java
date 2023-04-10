@@ -1,10 +1,13 @@
 package com.web.study.controller.lecture;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
 import com.web.study.service.LectureService;
@@ -25,16 +28,25 @@ public class LectureController {
 		
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
+	
 	// Read
-	public ResponseEntity<? extends ResponseDto> get() {
+	@GetMapping("/lectures")
+	public ResponseEntity<? extends ResponseDto> getLectureAll() {
 		
-		return ResponseEntity.ok().body(ResponseDto.ofDefault());
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.getLectureAll()));
 	}
+	@GetMapping("/lecture/{id}")
+	public ResponseEntity<? extends ResponseDto> findLectureById(@PathVariable int id) {
+		
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
+	}
+	
 	// Update
 	public ResponseEntity<? extends ResponseDto> modify() {
 			
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
+	
 	// Delete
 		public ResponseEntity<? extends ResponseDto> remove() {
 				
