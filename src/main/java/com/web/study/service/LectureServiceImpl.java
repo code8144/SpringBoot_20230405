@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LectureServiceImpl implements LectureService {
 	
+	// final => 상수: 초기화가 무조건 일어나야함.
 	private final LectureRepository lectureRepository;
 
 	@Override
