@@ -6,12 +6,11 @@ import lombok.Data;
 
 @Data
 public class DataResponseDto<T> extends ResponseDto {
-	
-	private final T data;
 
+	private final T data;
+	
 	private DataResponseDto(T data) {
-		super(true, HttpStatus.OK.value(), "Successfully");	//super로 ResponseDto 생성
-		//HttpStatus.OK.value()는 200번 출력
+		super(true, HttpStatus.OK.value(), "Successfully");
 		this.data = data;
 	}
 	
@@ -19,7 +18,7 @@ public class DataResponseDto<T> extends ResponseDto {
 		super(true, HttpStatus.OK.value(), message);
 		this.data = data;
 	}
-	
+
 	public static <T> DataResponseDto<T> of(T data) {
 		return new DataResponseDto<T>(data);
 	}
@@ -31,5 +30,15 @@ public class DataResponseDto<T> extends ResponseDto {
 	public static <T> DataResponseDto<T> empty() {
 		return new DataResponseDto<T>(null);
 	}
-
+	
 }
+
+
+
+
+
+
+
+
+
+

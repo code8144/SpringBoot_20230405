@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
@@ -23,7 +24,7 @@ public class ErrorResponseDto extends ResponseDto {
 		super(false, status.value(), e.getMessage());
 		this.errorData = errorData;
 	}
-	
+
 	public static ErrorResponseDto of(HttpStatus status) {
 		return new ErrorResponseDto(status);
 	}
@@ -32,12 +33,22 @@ public class ErrorResponseDto extends ResponseDto {
 		return new ErrorResponseDto(status, e);
 	}
 	
-	private static ErrorResponseDto of(HttpStatus status, Exception e, Map<String, String> errorData) {
+	public static ErrorResponseDto of(HttpStatus status, Exception e, Map<String, String> errorData) {
 		return new ErrorResponseDto(status, e, errorData);
 	}
 	
 	public static ErrorResponseDto empty() {
 		return new ErrorResponseDto(null);
 	}
-
+	
 }
+
+
+
+
+
+
+
+
+
+

@@ -14,34 +14,40 @@ import com.web.study.service.StudentService;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 public class StudentController {
 	
 	private final StudentService studentService;
 	
 	// @RequestBody => 클라이언트 -> 서버 데이터 전송(JSON)
 	// JSON의 형태 -> 객체
-
+	
 	@PostMapping("/student")
-	public ResponseEntity<? extends ResponseDto> registStudent(@RequestBody StudentReqDto studentReqDto) {
+	public ResponseEntity<? extends ResponseDto> registeStudent(@RequestBody StudentReqDto studentReqDto) {
 		
-		studentService.registStudent(studentReqDto);
+		studentService.registeStudent(studentReqDto);
 		
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
 	
 	@GetMapping("/students")
-	public ResponseEntity<? extends ResponseDto> getStudents() {
-		
+	public ResponseEntity<? extends ResponseDto> getStudentAll() {
 		return ResponseEntity.ok().body(DataResponseDto.of(studentService.getStudentAll()));
-		
 	}
 	
 	@GetMapping("/student/{id}")
 	public ResponseEntity<? extends ResponseDto> findStudentById(@PathVariable int id) {
-		
 		return ResponseEntity.ok().body(DataResponseDto.of(studentService.findStudentById(id)));
-		
 	}
 }
+
+
+
+
+
+
+
+
+
+

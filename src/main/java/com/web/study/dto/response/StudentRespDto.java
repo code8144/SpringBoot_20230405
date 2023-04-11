@@ -11,6 +11,4 @@ public class StudentRespDto {
 	private int id;
 	private String name;
 	private LocalDate birthDate;
-
-
 }

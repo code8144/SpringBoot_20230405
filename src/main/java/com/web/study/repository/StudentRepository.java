@@ -11,5 +11,4 @@ public interface StudentRepository {
 	public int saveStudent(Student student);
 	public List<Student> getStudentAll();
 	public Student findStudentById(int id);
-
 }

@@ -12,17 +12,17 @@ import com.web.study.repository.StudentRepository;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
-	
-	private final StudentRepository studentRepository;
 
+	private final StudentRepository studentRepository;
+	
 	@Override
-	public void registStudent(StudentReqDto studentReqDto) {
+	public void registeStudent(StudentReqDto studentReqDto) {
 		studentRepository.saveStudent(studentReqDto.toEntity());
 	}
-
+	
 	@Override
 	public List<StudentRespDto> getStudentAll() {
 		List<StudentRespDto> dtos = new ArrayList<>();
@@ -31,11 +31,15 @@ public class StudentServiceImpl implements StudentService {
 		});
 		return dtos;
 	}
-
+	
 	@Override
-	public Student findStudentById(int id) {
-		
-		return studentRepository.findStudentById(id);
+	public StudentRespDto findStudentById(int id) {
+		return studentRepository.findStudentById(id).toDto();
 	}
-
 }
+
+
+
+
+
+

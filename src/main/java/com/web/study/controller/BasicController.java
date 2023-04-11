@@ -12,12 +12,7 @@ import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ErrorResponseDto;
 import com.web.study.dto.ResponseDto;
 
-				//RestController는 data를 return하는 용도
-@RestController	//Controller는 view를 return하는 용도
-				/*
-				 * Controller는 view만 return가능하기때문에 controller를 쓸때 data를 응답하기 위해서는 
-				 * ResponseBody를 항상 써 주어야한다.
-				 * */
+@RestController
 public class BasicController {
 	
 	@GetMapping("/view/test")
@@ -32,13 +27,22 @@ public class BasicController {
 		
 		if(strList.contains("e")) {
 			try {
-				throw new RuntimeException();
-			} catch(Exception e) {
+				throw new RuntimeException("오류났어!!!!");
+			} catch (Exception e) {
 				return ResponseEntity.internalServerError().body(ErrorResponseDto.of(HttpStatus.INTERNAL_SERVER_ERROR, e));
-				
 			}
 		}
 		
-		return ResponseEntity.ok(DataResponseDto.of(strList));
+		
+		return ResponseEntity.ok().body(DataResponseDto.of(strList)); 
 	}
+	
+	
 }
+
+
+
+
+
+
+

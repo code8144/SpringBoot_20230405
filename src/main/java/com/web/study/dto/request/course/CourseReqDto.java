@@ -10,16 +10,15 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CourseReqDto {
-	
 	private int lectureId;
 	private int studentId;
-	private LocalDate registDate;
+	private LocalDate registeDate;
 	
 	public Course toEntity() {
 		return Course.builder()
-				.lecture_id(lectureId)
-				.student_id(studentId)
-				.regist_date(registDate)
+				.ltm_id(lectureId)
+				.sdm_id(studentId)
+				.registe_date(registeDate)
 				.build();
 	}
 }

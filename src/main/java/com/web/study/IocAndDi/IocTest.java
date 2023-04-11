@@ -17,7 +17,8 @@ public class IocTest {
 	
 	public void run() {
 		test.printTest();
-		System.out.println("IoCTest 출력");
+		System.out.println("IoCTest 출력!");
 	}
-
+	
+	
 }

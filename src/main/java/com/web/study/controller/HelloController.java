@@ -14,9 +14,21 @@ public class HelloController {
 		
 		Map<String, String> testMap = new HashMap<>();
 		testMap.put("name", name);
-		testMap.put("age", "28");
-		testMap.put("address", "부산 금정구 구서동");
+		testMap.put("age", "30");
+		testMap.put("address", "부산 동래구 사직동");
 		
 		return testMap;
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+

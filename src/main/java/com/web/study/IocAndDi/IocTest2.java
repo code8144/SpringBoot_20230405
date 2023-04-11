@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class IocTest2 {
 	
-	@Qualifier("testC")	//Component Annotation 중복 사용가능하게
-	@Autowired	
+	@Qualifier("testC")
+	@Autowired
 	private Test test;
 	
 //	public IocTest(Test test) {
@@ -17,7 +17,8 @@ public class IocTest2 {
 	
 	public void run() {
 		test.printTest();
-		System.out.println("IoCTest2 출력");
+		System.out.println("IoCTest2 출력!");
 	}
-
+	
+	
 }
