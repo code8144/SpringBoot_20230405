@@ -20,7 +20,7 @@ public class InstructorServiceImpl implements InstructorService {
 	private final InstructorRepository instructorRepository;
 	
 	@Override
-	public void registeInstructor(InstructorReqDto instructorReqDto) {
+	public void registInstructor(InstructorReqDto instructorReqDto) {
 		instructorRepository.saveInstructor(instructorReqDto.toEntity());
 	}
 	

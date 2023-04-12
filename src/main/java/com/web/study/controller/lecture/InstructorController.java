@@ -21,9 +21,9 @@ public class InstructorController {
 	private final InstructorService instructorService;
 	
 	@PostMapping("/instructor")
-	public ResponseEntity<? extends ResponseDto> registerInstructor(@RequestBody InstructorReqDto instructorReqDto) {
+	public ResponseEntity<? extends ResponseDto> registrInstructor(@RequestBody InstructorReqDto instructorReqDto) {
 
-		instructorService.registeInstructor(instructorReqDto);
+		instructorService.registInstructor(instructorReqDto);
 		
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}

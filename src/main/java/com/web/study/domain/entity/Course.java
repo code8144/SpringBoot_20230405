@@ -8,7 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class Course {
 	private int csm_id;
 	private int ltm_id;
 	private int sdm_id;
-	private LocalDate registe_date;
+	private LocalDate regist_date;
 	private Lecture lecture;
 	private Student student;
 	
@@ -41,7 +43,7 @@ public class Course {
 		
 		return CourseRespDto.builder()
 				.courseId(csm_id)
-				.registeDate(registe_date)
+				.registDate(regist_date)
 				.lectureName(lectureName)
 				.lecturePrice(lecturePrice)
 				.instructorName(instructorName)

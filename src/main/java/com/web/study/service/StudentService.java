@@ -7,7 +7,7 @@ import com.web.study.dto.response.StudentRespDto;
 
 public interface StudentService {
 
-	public void registeStudent(StudentReqDto studentReqDto);
+	public void registStudent(StudentReqDto studentReqDto);
 	public List<StudentRespDto> getStudentAll();
 	public StudentRespDto findStudentById(int id);
 }

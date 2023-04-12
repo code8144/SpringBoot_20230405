@@ -29,14 +29,14 @@
 		<result column="csm_id" property="csm_id"/>
 		<result column="ltm_id" property="ltm_id"/>
 		<result column="sdm_id" property="sdm_id"/>
-		<result column="registe_date" property="registe_date"/>
+		<result column="regist_date" property="regist_date"/>
 		<collection property="lecture" resultMap="lecture"></collection>
 		<collection property="student" resultMap="student"></collection>
 	</resultMap>
 	
 	<insert id="saveCourse" parameterType="com.web.study.domain.entity.Course">
 		insert into course_mst
-		values (0, #{ltm_id}, #{sdm_id}, #{registe_date})
+		values (0, #{ltm_id}, #{sdm_id}, #{regist_date})
 	</insert>
 	
 	<select id="getCourseAll" resultMap="course">
@@ -44,7 +44,7 @@
 			cm.csm_id,
 			cm.ltm_id,
 			cm.sdm_id,
-			cm.registe_date,
+			cm.regist_date,
 			lm.ltm_id,
 			lm.ltm_name,
 			lm.ltm_price,
@@ -67,7 +67,7 @@
 			cm.csm_id,
 			cm.ltm_id,
 			cm.sdm_id,
-			cm.registe_date,
+			cm.regist_date,
 			lm.ltm_id,
 			lm.ltm_name,
 			lm.ltm_price,

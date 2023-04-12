@@ -7,7 +7,7 @@ import com.web.study.dto.response.InstructorRespDto;
 
 public interface InstructorService {
 
-	public void registeInstructor(InstructorReqDto instructorReqDto);
+	public void registInstructor(InstructorReqDto instructorReqDto);
 	public List<InstructorRespDto> getInstructorAll();
 	public InstructorRespDto findInstructorById(int id);
 }
