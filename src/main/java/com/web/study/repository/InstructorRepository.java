@@ -10,5 +10,6 @@ import com.web.study.domain.entity.Instructor;
 public interface InstructorRepository {
 	public int saveInstructor(Instructor instructor);
 	public List<Instructor> getInstructorAll();
+	//하나만이라 리스트가 아님 
 	public Instructor findInstructorById(int id);
 }

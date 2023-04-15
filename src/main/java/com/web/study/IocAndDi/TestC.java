@@ -1,5 +1,8 @@
 package com.web.study.IocAndDi;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TestC implements Test {
 
 	@Override

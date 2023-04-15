@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class CourseRespDto {
 	private int courseId;
-	private LocalDate registDate;
+	private LocalDate registeDate;
 	private String lectureName;
 	private int lecturePrice;
 	private String instructorName;

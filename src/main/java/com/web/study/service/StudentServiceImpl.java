@@ -19,7 +19,7 @@ public class StudentServiceImpl implements StudentService {
 	private final StudentRepository studentRepository;
 	
 	@Override
-	public void registStudent(StudentReqDto studentReqDto) {
+	public void registeStudent(StudentReqDto studentReqDto) {
 		studentRepository.saveStudent(studentReqDto.toEntity());
 	}
 	

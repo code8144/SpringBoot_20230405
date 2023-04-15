@@ -22,9 +22,9 @@ public class LectureController {
 	
 	// Create
 	@PostMapping("/lecture")
-	public ResponseEntity<? extends ResponseDto> registr(@RequestBody LectureReqDto lectureReqDto) {
+	public ResponseEntity<? extends ResponseDto> register(@RequestBody LectureReqDto lectureReqDto) {
 		
-		lectureService.registLecture(lectureReqDto);
+		lectureService.registeLecture(lectureReqDto);
 		
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}

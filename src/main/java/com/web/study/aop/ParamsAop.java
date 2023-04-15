@@ -9,33 +9,34 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
-@Aspect
 @Component
+@Aspect
+@Slf4j
 public class ParamsAop {
-	
+
 	@Pointcut("@annotation(com.web.study.aop.annotation.ParamsAspect)")
-	private void pointCut() {}
-	
+	private void pointCut() {
+	}
+
 	@Around("pointCut()")
 	public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-		
+
 		StringBuilder builder = new StringBuilder();
-		
-		CodeSignature codeSignature = (CodeSignature)joinPoint.getSignature();
+
+		//다운캐스팅
+		CodeSignature codeSignature = (CodeSignature) joinPoint.getSignature();
 		String[] parameterNames = codeSignature.getParameterNames();
 		Object[] args = joinPoint.getArgs();
-		
-		for(int i = 0; i < parameterNames.length; i++) {
-			if(i != 0) {
+
+		for (int i = 0; i < parameterNames.length; i++) {
+			if(i !=0) {
 				builder.append(", ");
-				
 			}
-			builder.append(parameterNames[i] + ": " + args[i]);
+			
+			builder.append(parameterNames[i] + ":" + args[i]);
 		}
-		
-		log.info("[ Params ] >>> {}", builder.toString());
-		
+		log.info("[Params] >>> {}", builder.toString());
+
 		return joinPoint.proceed();
 	}
 

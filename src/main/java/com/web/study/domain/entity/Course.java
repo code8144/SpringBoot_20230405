@@ -10,16 +10,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@ToString
 public class Course {
 	private int csm_id;
 	private int ltm_id;
 	private int sdm_id;
-	private LocalDate regist_date;
+	private LocalDate registe_date;
 	private Lecture lecture;
 	private Student student;
 	
@@ -43,7 +43,7 @@ public class Course {
 		
 		return CourseRespDto.builder()
 				.courseId(csm_id)
-				.registDate(regist_date)
+				.registeDate(registe_date)
 				.lectureName(lectureName)
 				.lecturePrice(lecturePrice)
 				.instructorName(instructorName)

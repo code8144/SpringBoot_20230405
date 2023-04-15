@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class BasicTestDto2 {
-	private int level;
-	private String nickName;
-	private String tier;
+	private String carname;
+	private int number;
+
 }

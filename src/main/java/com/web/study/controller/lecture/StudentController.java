@@ -24,9 +24,9 @@ public class StudentController {
 	// JSON의 형태 -> 객체
 	
 	@PostMapping("/student")
-	public ResponseEntity<? extends ResponseDto> registStudent(@RequestBody StudentReqDto studentReqDto) {
+	public ResponseEntity<? extends ResponseDto> registeStudent(@RequestBody StudentReqDto studentReqDto) {
 		
-		studentService.registStudent(studentReqDto);
+		studentService.registeStudent(studentReqDto);
 		
 		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}

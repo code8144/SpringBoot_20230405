@@ -12,10 +12,10 @@ import org.springframework.validation.BeanPropertyBindingResult;
 
 import com.web.study.exception.CustomException;
 
-@Component
 @Aspect
+@Component
 public class ValidationAop {
-	
+
 	@Pointcut("@annotation(com.web.study.aop.annotation.ValidAspect)")
 	private void pointCut() {}
 	
@@ -24,15 +24,15 @@ public class ValidationAop {
 		
 		BeanPropertyBindingResult bindingResult = null;
 		
-		for(Object obj : joinPoint.getArgs()) {
+		
+		for(Object obj: joinPoint.getArgs()) {
+			//다운캐스팅
 			if(obj.getClass() == BeanPropertyBindingResult.class) {
 				bindingResult = (BeanPropertyBindingResult) obj;
 			}
 		}
-		
 		if(bindingResult.hasErrors()) {
-			Map<String, String> errorMap = new HashMap<>();
-			
+			Map<String, String > errorMap = new HashMap<>();
 			bindingResult.getFieldErrors().forEach(error -> {
 				errorMap.put(error.getField(), error.getDefaultMessage());
 			});
@@ -41,6 +41,6 @@ public class ValidationAop {
 		}
 		
 		return joinPoint.proceed();
+		
 	}
-
 }

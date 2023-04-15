@@ -19,7 +19,7 @@
 		<result column="itm_birth" property="itm_birth"/>
 	</resultMap>
 	
-	<insert id="regist" parameterType="com.web.study.domain.entity.Lecture">
+	<insert id="registe" parameterType="com.web.study.domain.entity.Lecture">
 		insert into lecture_mst
 		values (0, #{ltm_name}, #{ltm_price}, #{itm_id})
 	</insert>

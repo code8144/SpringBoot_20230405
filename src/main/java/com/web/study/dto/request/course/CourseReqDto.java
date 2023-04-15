@@ -12,13 +12,13 @@ import lombok.ToString;
 public class CourseReqDto {
 	private int lectureId;
 	private int studentId;
-	private LocalDate registDate;
+	private LocalDate registeDate;
 	
 	public Course toEntity() {
 		return Course.builder()
 				.ltm_id(lectureId)
 				.sdm_id(studentId)
-				.regist_date(registDate)
+				.registe_date(registeDate)
 				.build();
 	}
 }

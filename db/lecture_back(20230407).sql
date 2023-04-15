@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `lecture_mst`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `lecture_mst` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `leture_name` varchar(45) NOT NULL,
+  `lecture_name` varchar(45) NOT NULL,
   `lecture_price` int NOT NULL,
   `lecturer_id` int NOT NULL,
   PRIMARY KEY (`id`)
@@ -44,28 +44,28 @@ INSERT INTO `lecture_mst` VALUES (1,'java기초',50000,1);
 UNLOCK TABLES;
 
 --
--- Table structure for table `lecture_regist_mst`
+-- Table structure for table `lecture_registe_mst`
 --
 
-DROP TABLE IF EXISTS `lecture_regist_mst`;
+DROP TABLE IF EXISTS `lecture_registe_mst`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `lecture_regist_mst` (
+CREATE TABLE `lecture_registe_mst` (
   `id` int NOT NULL AUTO_INCREMENT,
   `lecture_id` int NOT NULL,
   `student_id` int NOT NULL,
-  `regist_date` date NOT NULL,
+  `registe_date` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `lecture_regist_mst`
+-- Dumping data for table `lecture_registe_mst`
 --
 
-LOCK TABLES `lecture_regist_mst` WRITE;
-/*!40000 ALTER TABLE `lecture_regist_mst` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lecture_regist_mst` ENABLE KEYS */;
+LOCK TABLES `lecture_registe_mst` WRITE;
+/*!40000 ALTER TABLE `lecture_registe_mst` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lecture_registe_mst` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -133,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-07 17:45:58
+-- Dump completed on 2023-04-07 17:46:02

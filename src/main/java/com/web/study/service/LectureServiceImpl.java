@@ -22,11 +22,11 @@ public class LectureServiceImpl implements LectureService {
 	private final LectureRepository lectureRepository;
 	
 	@Override
-	public void registLecture(LectureReqDto lectureReqDto) {
+	public void registeLecture(LectureReqDto lectureReqDto) {
 		// DTO -> ENTITY 변환
 		Lecture lecture = lectureReqDto.toEntity();
 		System.out.println("변환: " + lecture);
-		lectureRepository.regist(lecture);
+		lectureRepository.registe(lecture);
 	}
 	
 	@Override

@@ -6,7 +6,10 @@ import lombok.Data;
 @Builder
 @Data
 public class JwtTokenRespDto {
+	
 	private String grantType;
 	private String accessToken;
+	
+	
 
 }
